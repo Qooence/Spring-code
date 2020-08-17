@@ -1,6 +1,6 @@
 package com.code.delegate;
 
-public class ExectorA implements IExector{
+public class ExecutorA implements IExecutor{
 
     @Override
     public void doing() {

@@ -1,14 +1,18 @@
 package com.code.delegate;
 
-public class Dispatcher implements IExector{
-    private IExector exector;
+import java.util.Random;
+
+public class Dispatcher implements IExecutor{
 
     @Override
     public void doing() {
-        this.exector.doing();
-    }
-
-    public Dispatcher(IExector exector){
-        this.exector = exector;
+        IExecutor executor;
+        System.out.println("开始委派策略....");
+        if(new Random().nextBoolean()){
+            executor = new ExecutorA();
+        }else{
+            executor = new ExecutorB();
+        }
+        executor.doing();
     }
 }

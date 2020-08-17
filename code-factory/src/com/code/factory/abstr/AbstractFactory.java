@@ -5,9 +5,9 @@ import com.code.factory.IPhone;
 import com.code.factory.MeiZu;
 import com.code.factory.Phone;
 
-public abstract class AbstractFactory {
+public interface AbstractFactory {
 
-    Phone getPhone(String name){
+    default Phone getPhone(String name){
         if (name.equalsIgnoreCase("IPhone")){
             return new IPhone();
         }else if (name.equalsIgnoreCase("HuaWei")){
@@ -20,5 +20,5 @@ public abstract class AbstractFactory {
         }
     }
 
-    abstract Phone getPhone();
+    Phone getPhone();
 }
